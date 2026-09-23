@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JORA Development Services Ltd - development and professional services in Zambia.">
+<title>JORA Development Services Ltd</title>
+<style>
+:root{
+  --blue:#0754a6; --deep:#062c5a; --yellow:#f4c21d; --charcoal:#252a30;
+  --light:#f6f8fb; --white:#fff; --text:#1c2530;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.topline{height:5px;background:linear-gradient(90deg,var(--yellow) 0 16%,var(--blue) 16% 84%,var(--yellow) 84%)}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.97);box-shadow:0 2px 14px rgba(0,0,0,.08)}
+.nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--deep)}
+.brand img{width:62px;height:62px;object-fit:contain}
+.brand span{font-size:18px;line-height:1.1}
+.brand small{display:block;color:var(--blue);font-size:11px;letter-spacing:1px;margin-top:3px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-weight:700;color:#24344a;font-size:14px}
+nav a:hover{color:var(--blue)}
+.menu{display:none;background:none;border:0;font-size:28px}
+.hero{background:
+ radial-gradient(circle at 80% 20%,rgba(244,194,29,.22),transparent 28%),
+ linear-gradient(135deg,#061c36 0%,#073f7c 58%,#0754a6 100%);
+color:white;padding:88px 20px 78px;overflow:hidden}
+.hero-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.badge{display:inline-block;border:1px solid rgba(244,194,29,.7);color:#ffe47a;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.03;margin:18px 0}
+.hero p{font-size:19px;color:#e6effa;max-width:680px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:13px 20px;border-radius:7px;font-weight:800;display:inline-block}
+.btn.primary{background:var(--yellow);color:#111}
+.btn.secondary{border:1px solid #bcd2ec;color:white}
+.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:28px;backdrop-filter:blur(5px)}
+.hero-card h3{margin-top:0;color:#ffe06a}
+.hero-card div{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+section{padding:72px 20px}
+.container{max-width:1150px;margin:auto}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:34px;margin:0 0 8px;color:var(--deep)}
+.section-title p{color:#657285;margin:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.panel{background:var(--light);padding:30px;border-radius:16px;border-left:5px solid var(--yellow)}
+.services{background:#f7f9fc}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;padding:25px;border-radius:14px;border:1px solid #e4e9ef;box-shadow:0 8px 25px rgba(9,43,78,.05)}
+.icon{width:48px;height:48px;border-radius:12px;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:23px;font-weight:900}
+.card h3{margin:15px 0 7px;color:var(--deep)}
+.card p{color:#657285;margin:0}
+.contact{background:linear-gradient(135deg,#f6f8fb,#fff)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card{background:#fff;border:1px solid #e2e8ef;border-radius:15px;padding:26px}
+.contact-item{padding:12px 0;border-bottom:1px solid #edf0f4}
+.contact-item:last-child{border-bottom:0}
+.contact-item b{display:block;color:var(--deep)}
+footer{background:#071b32;color:#dbe7f4;padding:35px 20px}
+.footer-inner{max-width:1150px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer-inner strong{color:#fff}
+.rights{font-size:13px;color:#9db0c6}
+.whatsapp{position:fixed;right:18px;bottom:18px;background:#18a85b;color:white;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;font-size:25px;font-weight:900;box-shadow:0 8px 25px rgba(0,0,0,.22);z-index:20}
+@media(max-width:800px){
+ nav{display:none}.menu{display:block}
+ .hero-inner,.about,.contact-grid{grid-template-columns:1fr}
+ .grid{grid-template-columns:1fr}
+ .hero{padding-top:65px}
+ .hero-card{margin-top:5px}
+ .footer-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">
+      <img src="jora-letterhead.png" alt="JORA Development Services Ltd logo">
+      <span>JORA<small>DEVELOPMENT SERVICES LTD</small></span>
+    </a>
+    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <nav id="navlinks">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-inner">
+  <div>
+   <span class="badge">JORA DEVELOPMENT SERVICES LTD</span>
+   <h1>Building ideas into practical solutions.</h1>
+   <p>A professional Zambian development services company focused on reliable solutions, quality work and long-term value for clients and communities.</p>
+   <div class="btns">
+    <a class="btn primary" href="#services">Our Services</a>
+    <a class="btn secondary" href="#contact">Contact JORA</a>
+   </div>
+  </div>
+  <div class="hero-card">
+   <h3>JORA at a glance</h3>
+   <div><b>Location</b><br>Milishi Custom Area, Chembe–Mansa Road</div>
+   <div><b>Phone</b><br>+260 776 365 621 / +260 955 211 112</div>
+   <div><b>Email</b><br>joradevelopmentservices@gmail.com</div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-title"><h2>About JORA</h2><p>Professional service with a practical approach.</p></div>
+  <div class="about">
+   <div>
+    <h3>Development services you can build on</h3>
+    <p>JORA Development Services Ltd is presented as a professional company serving clients in Zambia. This first website version provides a strong foundation for adding your exact company profile, projects, certificates, team and detailed services.</p>
+    <p>As the business grows, this site can be expanded with a project gallery, online quotation requests, maps, testimonials and downloadable company documents.</p>
+   </div>
+   <div class="panel"><h3>Our approach</h3><p><b>Quality:</b> We aim for dependable, professional work.</p><p><b>Integrity:</b> Clear communication and responsible service.</p><p><b>Growth:</b> Practical solutions designed for long-term value.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="container">
+  <div class="section-title"><h2>Our Services</h2><p>Replace these with JORA's confirmed service categories as you provide them.</p></div>
+  <div class="grid">
+   <article class="card"><div class="icon">🏗</div><h3>Development Projects</h3><p>Planning and support for development and construction-related projects.</p></article>
+   <article class="card"><div class="icon">💼</div><h3>Business Services</h3><p>Professional support for businesses, organisations and individual clients.</p></article>
+   <article class="card"><div class="icon">🌱</div><h3>Community & Agriculture</h3><p>Solutions that can support productive projects and community development.</p></article>
+   <article class="card"><div class="icon">📋</div><h3>Project Support</h3><p>Organised assistance from initial planning through project implementation.</p></article>
+   <article class="card"><div class="icon">🔧</div><h3>Technical Services</h3><p>Practical technical solutions tailored to the needs of each client.</p></article>
+   <article class="card"><div class="icon">🤝</div><h3>Consultation</h3><p>Discuss your project with JORA and identify practical next steps.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container">
+  <div class="section-title"><h2>Contact JORA</h2><p>Let's discuss your project or service needs.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card">
+    <div class="contact-item"><b>📍 Address</b>Farm House Plot No. 1, Off Chembe–Mansa Road, Kachesa Borehole Rd., Milishi Custom Area.</div>
+    <div class="contact-item"><b>📞 Phone</b><a href="tel:+260776365621">+260 776 365 621</a> / <a href="tel:+260955211112">+260 955 211 112</a></div>
+    <div class="contact-item"><b>✉️ Email</b><a href="mailto:joradevelopmentservices@gmail.com">joradevelopmentservices@gmail.com</a></div>
+   </div>
+   <div class="contact-card">
+    <h3>Request a consultation</h3>
+    <p>Send JORA a message by email or phone. A contact form can be connected to email in the next version.</p>
+    <a class="btn primary" href="mailto:joradevelopmentservices@gmail.com?subject=JORA%20Development%20Services%20Enquiry">Email JORA</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="footer-inner">
+  <div><strong>JORA DEVELOPMENT SERVICES LTD</strong><br><span class="rights">Professional development services in Zambia.</span></div>
+  <div class="rights">© <span id="year"></span> JORA Development Services Ltd</div>
+ </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/260776365621" aria-label="WhatsApp JORA">☎</a>
+<script>
+function toggleMenu(){
+ const n=document.getElementById('navlinks');
+ n.style.display=n.style.display==='flex'?'none':'flex';
+ n.style.position='absolute'; n.style.right='20px'; n.style.top='75px';
+ n.style.flexDirection='column'; n.style.background='#fff'; n.style.padding='18px';
+ n.style.borderRadius='10px'; n.style.boxShadow='0 8px 25px rgba(0,0,0,.12)';
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
